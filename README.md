@@ -8,6 +8,7 @@ To run this project execute following commands on terminal:
 cd job_search
 python manage.py runserver
 
-
+To run the frontend part execute following commands in js_code folder:
+node app.js
 To access the apis the end point are /skill and /job
 For further information refer the code.

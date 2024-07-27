@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4a90e2;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4a90e2;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #357ABD;
+        }
+        .job {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job h2 {
+            margin-top: 0;
+            color: #4a90e2;
+        }
+
+        .job p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .icon {
+            margin-right: 10px;
+            color: #4a90e2;
+            width: 25px;
+            height: 25px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        #center {
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Job Details</h1>
+        <div class="job">
+            <h2>
+                <%= job.title.toUpperCase() %>
+            </h2>
+            <p><i class="fas fa-briefcase icon"></i><strong>Role:</strong>
+                <%= job.role %>
+            </p>
+            <p><i class="fas fa-building icon"></i><strong>Company:</strong>
+                <%= job.company %>
+            </p>
+            <p><i class="fas fa-info-circle icon"></i><strong>Description:</strong>
+                <%= job.description %>
+            </p>
+            <p><i class="fas fa-calendar-alt icon"></i><strong>Experience:</strong>
+                <%= job.experience %>
+            </p>
+            <p><i class="fas fa-graduation-cap icon"></i><strong>Qualifications:</strong>
+                <%= job.qualifications %>
+            </p>
+            <p><i class="fas fa-dollar-sign icon"></i><strong>Salary:</strong>
+                <%= job.salary %>
+            </p>
+            <p><i class="fas fa-map-marker-alt icon"></i><strong>Location:</strong>
+                <%= job.location %>
+            </p>
+            <p><i class="fas fa-clock icon"></i><strong>Time:</strong>
+                <%= job.time %>
+            </p>
+            <p><i class="fas fa-tasks icon"></i><strong>Responsibility:</strong>
+                <%= job.responsibility %>
+            </p>
+            <p><i class="fas fa-tools icon"></i><strong>Skills:</strong>
+                <%= job.skills %>
+            </p>
+        </div>
+        <div id="center">
+            <form action="/job" method="post">
+                <input type="hidden" value="<%= job.name %>" name="jobName">
+                <button id="back-lin" class="back-lin">Back</button>
+            
+            </form>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -4,14 +4,14 @@ from rest_framework import status
 from .serializers import SkillSerializer
 from rest_framework.views import APIView
 from .project import clean,rec
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 
 # Create your views here.
 
 class JobView(APIView):
     def get(self,request):
         job = rec.recommend(request.query_params.get('job'))
-        return HttpResponse(job,status=status.HTTP_200_OK)
+        return JsonResponse(job,safe=False)
 
 class SkillView(APIView):
     def post(self,request):
